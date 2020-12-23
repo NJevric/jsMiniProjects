@@ -1,0 +1,70 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&family=Montserrat:wght@700&display=swap');
+$fontNaslov:'Montserrat', sans-serif;;
+$fontText:'Hind Madurai', sans-serif;
+body{
+    min-height:100vh;
+    width:100vw;
+    background-color:#121212;
+    color:#fafafa;
+    
+    header{
+        h1{
+            padding:20px;
+            font-family: $fontNaslov;
+        }
+    }
+
+    form{
+        color:#222;
+        width:450px;
+        margin:0px auto;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background:#fff;
+        padding:50px;
+        border-radius: 5px;
+        font-family: $fontText;
+        h2{
+            margin-bottom: 20px;
+            font-size:2.5em;
+            font-family: $fontNaslov;
+        }
+        .inputTag{
+            display: flex;
+            flex-direction: column;
+            padding:5px 0px;
+
+            label{
+                color:#777;
+                padding:5px 0px;
+                font-weight: 600;
+            }
+            input{
+                height:36px;
+                border:2px solid #333;
+                border-radius: 3px;
+                padding:0px 10px;
+            }
+            #submit{
+                margin-top:20px;
+                height:38px;
+                background-color: #4B77BE;
+                color:#fcfcfc;
+                border:0px!important;
+                font-weight: 600;
+            }
+            small{
+                padding:2px 0px;
+            }
+        }
+    }
+}

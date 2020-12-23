@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&family=Montserrat:wght@700&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #121212;
+  color: #fafafa;
+}
+
+body header h1 {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+body form {
+  color: #222;
+  width: 450px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 50px;
+  border-radius: 5px;
+  font-family: "Hind Madurai", sans-serif;
+}
+
+body form h2 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  font-family: "Montserrat", sans-serif;
+}
+
+body form .inputTag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px 0px;
+}
+
+body form .inputTag label {
+  color: #777;
+  padding: 5px 0px;
+  font-weight: 600;
+}
+
+body form .inputTag input {
+  height: 36px;
+  border: 2px solid #333;
+  border-radius: 3px;
+  padding: 0px 10px;
+}
+
+body form .inputTag #submit {
+  margin-top: 20px;
+  height: 38px;
+  background-color: #4B77BE;
+  color: #fcfcfc;
+  border: 0px !important;
+  font-weight: 600;
+}
+
+body form .inputTag small {
+  padding: 2px 0px;
+}
+/*# sourceMappingURL=style.css.map */
