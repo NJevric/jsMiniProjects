@@ -8,15 +8,20 @@ const seats = document.querySelectorAll('.row .seat');
 const countSelectedSeats = document.querySelector('#count');
 const total = document.querySelector('#total');
 
+populateUI();
+
 // select movie 
 (function(){
     movie_select.addEventListener('change', () => {
-        console.log(movie_select.value);
+        // console.log(movie_select.value);
         ticketPrice = parseInt(movie_select.value);
-        console.log(movie_select.selectedIndex);
+        // console.log(movie_select.selectedIndex);
         setMovieData(movie_select.selectedIndex, movie_select.value);
+
+        // pozivam funkciju updateSelected da bi se ukupna cena promenila promenom filma
         let update = updateSelected();
-            update();
+        update();
+
         return ticketPrice;
     });
 })();
@@ -38,7 +43,7 @@ seats.forEach(seat => {
    
 });
 
-// sacuvaj selektovan film i njegovu cenu
+// sacuvaj selektovan film i njegovu cenu u local storage
 function setMovieData(movieIndex,moviePrice){
     localStorage.setItem('selectedMoiveIndex',movieIndex);
     localStorage.setItem('selectedMoviePrice',moviePrice);
@@ -68,3 +73,35 @@ function updateSelected(){
     return updateTotal;
 }
 
+// dohvati vrednosti iz local storage
+function populateUI(){
+    // zato sto sam niz prebacio u string metodom JSON.stringify
+    // sada moram vratiti u prvobitno stanje metodom JSON.parse
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    console.log(selectedSeats);
+    
+    if(selectedSeats != null && selectedSeats.length > 0){
+        seats.forEach((seat, index) => {
+            if(selectedSeats.indexOf(index) != -1){
+                seat.classList.add('selected');
+            }
+        }); 
+    }
+
+    const selectedMovieIndex = localStorage.getItem('selectedMoiveIndex');
+    // console.log(selectedMovieIndex);
+    if(selectedMovieIndex !== null){
+        movie_select.selectedIndex = selectedMovieIndex;
+    }
+
+    const selectedMoviePrice = localStorage.getItem('selectedMoviePrice');
+    if(selectedMovieIndex !== null){
+        ticketPrice = selectedMoviePrice;
+    }
+
+
+}
+
+// initial count and total set
+const updateSelectedCount = updateSelected();
+updateSelectedCount();
